@@ -35,7 +35,7 @@ def predict_sentiment(review):
     else:
         sentiment='Negative'
 
-    sentiment='Positive' if prediction[0][0] >0.5 else 'Negative'
+    # sentiment='Positive' if prediction[0][0] >0.5 else 'Negative'
 
     return sentiment, prediction[0][0]
 
