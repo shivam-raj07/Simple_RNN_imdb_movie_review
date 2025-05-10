@@ -28,6 +28,13 @@ def predict_sentiment(review):
 
     prediction=model.predict(preprocessed_input)
 
+    if prediction[0][0] > 0.6:
+        sentiment='Positive'
+    elif 0.4 < prediction[0][0] <= 0.6:
+        sentiment='Neutral'
+    else:
+        sentiment='Negative'
+
     sentiment='Positive' if prediction[0][0] >0.5 else 'Negative'
 
     return sentiment, prediction[0][0]
